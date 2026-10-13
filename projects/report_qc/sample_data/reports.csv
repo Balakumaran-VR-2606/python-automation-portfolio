@@ -1,0 +1,4 @@
+applicant_id,status,report_date
+DEMO-2001,completed,2026-10-01
+DEMO-2002,on hold,2026-10-02
+,completed,not-a-date
