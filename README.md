@@ -4,6 +4,10 @@ Built by Balakumaran VR. LinkedIn: https://www.linkedin.com/in/balakumaran-vr-36
 
 Selected examples of Python automation work focused on reducing repetitive operations, validating data, and improving document workflows. The examples in this repository are generalized portfolio demonstrations and use fictional sample data. They do not contain employer, client, vendor, candidate, or mailbox data.
 
+## Portfolio website
+
+The responsive personal portfolio website is in [`website/`](website/). Once GitHub Pages is enabled and the deployment workflow completes, it will be available at: https://balakumaran-vr-2606.github.io/python-automation-portfolio/
+
 ## Projects
 
 ### Unified Operations Automation Hub
