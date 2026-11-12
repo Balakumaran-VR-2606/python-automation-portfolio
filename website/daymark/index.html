@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101a2a">
+  <meta name="description" content="A calm, persistent task reminder app for your phone and laptop.">
+  <title>Daymark — reminders that stay with you</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Daymark home"><span class="brand-mark">d</span><span>daymark</span></a>
+      <div class="top-actions">
+        <span class="sync-state online"><i></i> Saved on this device</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">MAKE ROOM FOR WHAT MATTERS</p>
+          <h1>Keep the things<br><em>you mean to do.</em></h1>
+          <p class="hero-copy">Set a rhythm. We’ll keep reminding you until you mark it done.</p>
+        </div>
+        <div class="hero-orbit" aria-hidden="true"><span class="orbit-dot"></span><span class="orbit-core">✳</span></div>
+      </section>
+
+      <section class="composer card">
+        <div class="section-heading"><div><p class="eyebrow">A NEW REMINDER</p><h2>What needs doing?</h2></div><span class="step-badge">01</span></div>
+        <form id="task-form">
+          <label class="field wide"><span>Task name</span><input id="task-title" maxlength="100" placeholder="e.g. Take evening medicine" required></label>
+          <label class="field wide"><span>Extra details <small>optional</small></span><textarea id="task-notes" rows="2" maxlength="300" placeholder="A little context, if useful"></textarea></label>
+          <div class="form-grid">
+            <label class="field"><span>Start reminding</span><input id="task-start" type="datetime-local" required></label>
+            <div class="field"><span>Repeat every</span><div class="inline-control"><input id="repeat-value" type="number" min="1" max="999" value="2" required><select id="repeat-unit" aria-label="Repeat interval"><option value="minutes">minutes</option><option value="hours" selected>hours</option><option value="days">days</option></select></div></div>
+            <div class="field"><span>Sound duration</span><div class="inline-control"><input id="sound-value" type="number" min="1" max="600" value="20" required><span class="unit-label">seconds</span></div></div>
+          </div>
+          <div class="form-bottom"><p class="helper"><span class="helper-icon">↻</span> Repeats until you mark the task done.</p><button class="button button-primary" type="submit"><span>＋</span> Add reminder</button></div>
+        </form>
+      </section>
+
+      <section class="list-section">
+        <div class="list-heading"><div><p class="eyebrow">YOUR DAY, IN GOOD ORDER</p><h2>Reminders <span id="task-count" class="count-pill">0</span></h2></div><div class="list-tools"><button id="enable-notifications" class="button button-quiet">Enable alerts</button><button id="install-app" class="button button-quiet hidden">Install app</button></div></div>
+        <div class="filter-row"><button class="filter active" data-filter="active">In progress</button><button class="filter" data-filter="completed">Completed</button><span class="list-date" id="today-label"></span></div>
+        <div id="task-list" class="task-list"></div>
+        <div id="empty-state" class="empty-state"><span class="empty-spark">✳</span><h3>Nothing on the list yet</h3><p>Add a reminder above. It’ll keep its rhythm until you mark it done.</p></div>
+      </section>
+      <footer><span>DAYMARK</span><span>One small thing at a time.</span><span id="device-label">This device</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="confirm-dialog" class="confirm-dialog"><form method="dialog"><p class="eyebrow">MARK COMPLETE?</p><h2 id="confirm-title">Task complete</h2><p>We’ll stop its reminders on this device.</p><div class="dialog-actions"><button class="button button-quiet" value="cancel">Keep going</button><button class="button button-primary" id="confirm-done" value="confirm">Mark done</button></div></form></dialog>
+  <script src="app.js"></script>
+</body>
+</html>

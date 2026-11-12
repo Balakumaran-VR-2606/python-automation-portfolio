@@ -1,0 +1,10 @@
+{
+  "name": "Daymark — Task Reminders",
+  "short_name": "Daymark",
+  "description": "Keep the things you mean to do.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0d1522",
+  "theme_color": "#101a2a",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
